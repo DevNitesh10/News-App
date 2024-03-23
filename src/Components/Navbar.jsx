@@ -1,4 +1,5 @@
-const Navbar = () => {
+/* eslint-disable react/prop-types */
+const Navbar = ({setCategory}) => {
     return (
         <>
         {/* for dark mode use  data-bs-theme="dark" after className*/}
@@ -10,18 +11,27 @@ const Navbar = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
+                            
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                <div className="nav-link" role="button" onClick={() => setCategory("technology")}>Technology</div>
                             </li>
+
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Features</a>
+                                <div className="nav-link" role="button" onClick={() => setCategory("business")}>Business</div>
                             </li>
+
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Pricing</a>
+                                <div className="nav-link" role="button" onClick={() => setCategory("health")}>Health</div>
                             </li>
+                            
                             <li className="nav-item">
-                                <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+                                <div className="nav-link" role="button" onClick={() => setCategory("sports")}>Sports</div>
                             </li>
+                            
+                            <li className="nav-item">
+                                <div className="nav-link" role="button" onClick={() => setCategory("entertainment")}>Entertainment</div>
+                            </li>
+
                         </ul>
                     </div>
                 </div>

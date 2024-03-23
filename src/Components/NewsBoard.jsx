@@ -1,14 +1,15 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 
-const NewsBoard = () => {
+const NewsBoard = ({category}) => {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
         const fetchNews = async () => {
             try {
                 const API_KEY = import.meta.env.VITE_API_KEY;
-                const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+                const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`;
                 const response = await fetch(url);
                 const data = await response.json();
                 setArticles(data.articles);
@@ -18,7 +19,7 @@ const NewsBoard = () => {
         };
 
         fetchNews();
-    }, []);
+    }, [category]);
 
     // 
     return (

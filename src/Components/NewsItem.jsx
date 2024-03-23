@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+// eslint-disable-next-line react/prop-types
 const NewsItem = ({ title, description, image, url }) => {
     return (
         <div className="col-md-3 mb-3">
